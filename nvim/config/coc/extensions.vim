@@ -13,5 +13,5 @@ let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-yaml',
       \ 'coc-solargraph',
-      \ 'cos-sql'
+      \ 'coc-sql'
       \ ]
