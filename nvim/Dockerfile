@@ -6,15 +6,15 @@
 FROM debian:sid-20211220
 
 # Set image locale.
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV TZ=Europe/Warsaw
+ENV LANG ru_RU.UTF-8
+ENV LANGUAGE ru_RU:ru
+ENV TZ=Europe/Moscow
 
 # Expose some ports to host by default.
 EXPOSE 8080 8081 8082 8083 8084 8085
 
 # Define which Neovim COC extensions should be installed.
-ARG COC='coc-css coc-eslint coc-html coc-json coc-sh coc-sql coc-tsserver coc-yaml'
+ARG COC='coc-css coc-eslint coc-html coc-json coc-sh coc-sql coc-tsserver coc-yaml coc-solargraph'
 
 # Lazygit variables
 ARG LG='lazygit'
@@ -96,7 +96,7 @@ COPY ./home/ /root/
 
 # Create directory for projects (there should be mounted from host).
 RUN mkdir -p /root/workspace
-
+RUN git config --global --add safe.directory /root/workspace/
 # Set default location after container startup.
 WORKDIR /root/workspace
 

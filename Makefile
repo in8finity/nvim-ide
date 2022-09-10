@@ -2,15 +2,16 @@
 #
 # @author Maciej Bedra
 
-nvim = mashmb/nvim:dev
-nvim-flutter = mashmb/nvim-flutter:dev
-nvim-go = mashmb/nvim-go:dev
-nvim-jdk8 = mashmb/nvim-jdk8:dev
-nvim-latex = mashmb/nvim-latex:dev
-nvim-ojdk11 = mashmb/nvim-ojdk11:dev
-nvim-ojdk17 = mashmb/nvim-ojdk17:dev
-nvim-python3 = mashmb/nvim-python3:dev
-nvim-ts = mashmb/nvim-ts:dev
+nvim = in8finity/nvim:dev
+nvim-flutter = in8finity/nvim-flutter:dev
+nvim-go = in8finity/nvim-go:dev
+nvim-ruby = in8finity/nvim-ruby:dev
+nvim-jdk8 = in8finity/nvim-jdk8:dev
+nvim-latex = in8finity/nvim-latex:dev
+nvim-ojdk11 = in8finity/nvim-ojdk11:dev
+nvim-ojdk17 = in8finity/nvim-ojdk17:dev
+nvim-python3 = in8finity/nvim-python3:dev
+nvim-ts = in8finity/nvim-ts:dev
 
 all-build = build-nvim build-nvim-flutter build-nvim-go build-nvim-jdk8 build-nvim-latex build-nvim-ojdk11 build-nvim-ojdk17 build-nvim-python3 build-nvim-ts
 all-push = push-nvim push-nvim-flutter push-nvim-go push-nvim-jdk8 push-nvim-latex push-nvim-ojdk11 push-nvim-ojdk17 push-nvim-python3 push-nvim-ts
@@ -32,6 +33,10 @@ build-nvim-flutter:
 build-nvim-go:
 	echo "--- Building $(nvim-go) image ---"
 	cd nvim-go && docker build -t $(nvim-go) .
+
+build-nvim-ruby:
+	echo "--- Building $(nvim-ruby) image ---"
+	cd nvim-ruby && docker build -t $(nvim-ruby) .
 
 build-nvim-jdk8:
 	echo "--- Building $(nvim-jdk8) image ---"
